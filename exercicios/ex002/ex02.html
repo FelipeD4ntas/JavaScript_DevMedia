@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            padding: 40px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com dados v1.0</h1>
+    <button>Clique para começar</button>
+    <script>
+        var botao = document.getElementsByTagName('button')[0];
+        botao.addEventListener('click', clicou);
+        function clicou() {
+            var nome = window.prompt('Qual é seu nome?');
+            if (nome.length == 0) {
+                window.alert('[ERRO] Verifique os dados e tente novamente!')
+            } else {
+                window.alert(`Olá, ${nome}! É um prazer te conhecer!`)
+            }
+        }
+    </script>
+</body>
+</html>
