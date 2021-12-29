@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contador de Cliques</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 30px;
+            font-size: 1.3em;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+            text-align: center;
+        }
+        .botoes {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+        }
+        #cliques {
+            background: rgba(0, 128, 0, 0.521);
+        }
+        #zerar {
+            background: rgba(255, 0, 0, 0.527);
+        }
+        .contador {
+            margin: 10px auto;
+            padding: 0px;
+            font-weight: bold;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(151, 151, 151, 0.432);
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Contador de Cliques</h1>
+        <div class="botoes">
+            <button id="cliques">Clique para calcular</button>
+            <button id="zerar">Zerar o contador</button>
+        </div>
+        <div class="contador">
+            <p id="resultado"></p>
+        </div>
+    
+        <script>
+            let cont = document.getElementById('cliques');
+            cont.addEventListener('click', contar);
+            let zerar = document.getElementById('zerar');
+            zerar.addEventListener('click', zerar_cont);
+            var cliques = 0
+            var res = document.getElementById('resultado');
+            function contar() {
+                cliques++
+                res.innerHTML = `O contador está com <mark>${cliques}</mark> cliques.`;
+            } Math.min(5, 9, 2, 6, 1, 4)
+            function zerar_cont() {
+                res.innerHTML = '';
+                cliques = 0;
+            }
+        </script>
+    </body>
+</html>
