@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ano Bissexto</title>
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+                box-sizing: border-box;
+            }
+            button {
+                padding: 30px;
+                font-size: 1.3em;
+                margin: 0 10px;
+            }
+            h1 {
+                text-align: center;
+                width: max-content;
+                margin: 30px auto;
+            }
+            .box-botoes {
+                margin: 0 calc((100% - 800px) / 2);
+                display: flex;
+                justify-content: center;
+            }
+            .box-res {
+                margin: 0 calc((100% - 460px) / 2);
+            }
+            p {
+                line-height: 1.5em;
+            }
+            #bissexto {
+                background: rgba(0, 185, 0, 0.486);
+                color: green;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            #nao_bissexto {
+                background: rgba(185, 0, 0, 0.486);
+                color: red;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Desafio Ano Bissexto</h1>
+        <div class="box-botoes">
+            <button>Verificar</button>
+        </div>
+        <div class="box-res">
+            <p id="res">Informe um ano para saber se ele é <strong>bissexto</strong>.</p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fórmula de Bhaskara</title>
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+                box-sizing: border-box;
+            }
+            button {
+                padding: 30px;
+                font-size: 1.3em;
+                margin: 0 10px;
+            }
+            h1 {
+                text-align: center;
+                width: max-content;
+                margin: 30px auto;
+            }
+            .box-botoes {
+                margin: 0 calc((100% - 800px) / 2);
+                display: flex;
+                justify-content: center;
+            }
+            .box-res {
+                margin: 0 calc((100% - 460px) / 2);
+            }
+            p {
+                line-height: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Desafio Resolvendo Bhaskara</h1>
+        <div class="box-botoes">
+            <button>Calcular</button>
+        </div>
+        <div class="box-res">
+            <p id="res">Considerando uma equação <strong>ax<sup>2</sup> + bx + c = 0</strong>.<br>Aperte o botão acima para calcular o valor de <strong>&Delta;</strong>.</p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
