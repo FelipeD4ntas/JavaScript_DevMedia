@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o Sistema</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 30px;
+            font-size: 1.3em;
+            margin: 0 10px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .box-saida {
+            margin: 0 calc((100% - 500px) / 2);
+        }
+        .box-botoes {
+            margin: 0 calc((100% - 800px) / 2);
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com o Sistema</h1>
+    <div class="box-botoes">
+        <button>Clique em mim</button>
+    </div>
+    <div class="box-saida">
+        <p id="res">Aqui vai aparecer algo...</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
