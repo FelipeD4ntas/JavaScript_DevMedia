@@ -1,0 +1,56 @@
+@charset "UFT-8";
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-position: top center;
+    background-size: 80%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.box-input {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 0 calc((100% - 270px) / 2);
+}
+
+.box-botoes {
+    display: flex;
+    justify-content: center;
+}
+
+#box-saida {
+    padding: 0 calc((100% - 650px) / 2);
+}
+
+button {
+    padding: 30px;
+    border: 1px solid rgb(92, 92, 92);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:active {
+    background: rgba(128, 128, 128, 0.479);
+}
+
+span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
