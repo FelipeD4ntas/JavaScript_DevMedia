@@ -10,7 +10,8 @@ html {
 body {
     font-size: 1.6rem;
     background-position: top center;
-    background-size: 80%;
+    background-size: 100%;
+    background-image: url('imagens/fundo.jpg')
 }
 
 h1 {
