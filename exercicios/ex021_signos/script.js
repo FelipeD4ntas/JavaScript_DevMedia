@@ -1,32 +1,36 @@
 let btn = document.getElementsByTagName('button')[0];
 let saida = document.createElement('p');
 let box_saida = document.querySelector('#box-saida');
+let img = document.createElement('img');
+let box_imagens = document.getElementsByClassName('box-imagens')[0];
+img.setAttribute('class', 'imagens');
 saida.setAttribute('id', 'resultado');
 box_saida.appendChild(saida);
+box_imagens.appendChild(img);
 btn.addEventListener('click', clicou)
 
 function clicou() {
     // Signos: 
     let coleção_signos = [
-        { Nome: "Aquário", DataInicio: "01-20", DataFim: "02-18" },
-        { Nome: "Peixes", DataInicio: "02-19", DataFim: "03-20" },
-        { Nome: "Áries", DataInicio: "03-21", DataFim: "04-19" },
-        { Nome: "Touro", DataInicio: "04-20", DataFim: "05-20" },
-        { Nome: "Gêmeos", DataInicio: "05-21", DataFim: "06-21" },
-        { Nome: "Câncer", DataInicio: "06-22", DataFim: "07-23" },
-        { Nome: "Leão", DataInicio: "07-24", DataFim: "08-22" },
-        { Nome: "Virgem", DataInicio: "08-23", DataFim: "09-22" },
-        { Nome: "Libra", DataInicio: "09-23", DataFim: "10-22" },
-        { Nome: "Escorpião", DataInicio: "10-23", DataFim: "11-21" },
-        { Nome: "Sagitário", DataInicio: "11-22", DataFim: "12-21" },
-        { Nome: "Capricórnio", DataInicio: "12-22", DataFim: "01-19" }
+        { Nome: 'Aquário', DataInicio: '01-20', DataFim: '02-18' },
+        { Nome: 'Peixes', DataInicio: '02-19', DataFim: '03-20' },
+        { Nome: 'Áries', DataInicio: '03-21', DataFim: '04-19' },
+        { Nome: 'Touro', DataInicio: '04-20', DataFim: '05-20' },
+        { Nome: 'Gêmeos', DataInicio: '05-21', DataFim: '06-21' },
+        { Nome: 'Câncer', DataInicio: '06-22', DataFim: '07-23' },
+        { Nome: 'Leão', DataInicio: '07-24', DataFim: '08-22' },
+        { Nome: 'Virgem', DataInicio: '08-23', DataFim: '09-22' },
+        { Nome: 'Libra', DataInicio: '09-23', DataFim: '10-22' },
+        { Nome: 'Escorpião', DataInicio: '10-23', DataFim: '11-21' },
+        { Nome: 'Sagitário', DataInicio: '11-22', DataFim: '12-21' },
+        { Nome: 'Capricórnio', DataInicio: '12-22', DataFim: '01-19' }
     ];
 
     // Função para verificar o range das datas
     const verifica_data_range = (data, data_inicio, data_fim, tipo_comparacao) => {
-        if (tipo_comparacao == "and") {
+        if (tipo_comparacao == 'and') {
             return (data >= data_inicio && data <= data_fim);
-        } else if (tipo_comparacao == "or") {
+        } else if (tipo_comparacao == 'or') {
             return (data >= data_inicio || data <= data_fim);
         }
     }
@@ -53,196 +57,63 @@ function clicou() {
     let data_app = new Date(`${ano_nasc}-${mes_nasc}-${dia_nasc} 00:00:00`);
     const nome_signo = retorna_signo(coleção_signos, data_app);
 
-    let horoscopo = [
-        document.querySelector('#aquarius'),
-        document.querySelector('#peixes'),
-        document.querySelector('#aries'),
-        document.querySelector('#touro'),
-        document.querySelector('#gemeos'),
-        document.querySelector('#cancer'),
-        document.querySelector('#leao'),
-        document.querySelector('#virgem'),
-        document.querySelector('#libra'),
-        document.querySelector('#escorpiao'),
-        document.querySelector('#sagitario'),
-        document.querySelector('#capricornio')
-    ]
+    //Escolhendo a foto de acordo com o signo
 
-    switch (nome_signo) {
-        case 'Aquário':
-            horoscopo[0].style.transform = "scale(1)";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Peixes':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.transform = "scale(1)";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Áries':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.transform = "scale(1)";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Touro':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.transform = "scale(1)";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Gêmeos':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.transform = "scale(1)";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Câncer':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.transform = "scale(1)";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Leão':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.transform = "scale(1)";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Virgem':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.transform = "scale(1)";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Libra':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.transform = "scale(1)";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Escorpião':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.transform = "scale(1)";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Sagitário':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.transform = "scale(1)";
-            horoscopo[11].style.display = "none";
-            break
-        case 'Capricórnio':
-            horoscopo[0].style.display = "none";
-            horoscopo[1].style.display = "none";
-            horoscopo[2].style.display = "none";
-            horoscopo[3].style.display = "none";
-            horoscopo[4].style.display = "none";
-            horoscopo[5].style.display = "none";
-            horoscopo[6].style.display = "none";
-            horoscopo[7].style.display = "none";
-            horoscopo[8].style.display = "none";
-            horoscopo[9].style.display = "none";
-            horoscopo[10].style.display = "none";
-            horoscopo[11].style.transform = "scale(1)";
-            break
-    }
     if (dia_nasc.length == 0 || mes_nasc.length == 0 || ano_nasc.length == 0) {
         window.alert('[ATENÇÃO] É necessário digitar Dia, Mês e Ano.');
     } else {
-        saida.style.display = "inline-block";
+        switch (nome_signo) {
+            case 'Aquário':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/aquarius.jpg');
+                break
+            case 'Peixes':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/peixes.jpg');
+                break
+            case 'Áries':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/aries.jpg');
+                break
+            case 'Touro':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/touro.jpg');
+                break
+            case 'Gêmeos':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/gemeos.jpg');
+                break
+            case 'Câncer':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/cancer.jpg');
+                break
+            case 'Leão':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/leao.jpg');
+                break
+            case 'Virgem':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/virgem.jpg');
+                break
+            case 'Libra':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/libra.jpg');
+                break
+            case 'Escorpião':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/escorpiao.jpg');
+                break
+            case 'Sagitário':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/sagitario.jpg');
+                break
+            case 'Capricórnio':
+                img.style.transform = 'scale(1)';
+                img.setAttribute('src', 'imagens/capricornio.jpg');
+                break
+        }
+        saida.style.display = 'inline-block';
         saida.innerHTML = `Seu signo é: <span>${nome_signo}</span>`;
     }
-   
+
 }

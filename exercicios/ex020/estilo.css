@@ -16,15 +16,24 @@ html {
 body {
     font-size: 1.6rem;
     background-position: top center;
-    background-size: 100%;
+    background-size: cover;
+    background-image: url('../imagens/fundo.jpg')
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
 }
 
 h1 {
     text-align: center;
     font-family: Space;
     font-size: 4rem;
-    color: #b853a2;
-    text-shadow: 0px 0px 5px rgb(255, 255, 255);
+    color: rgb(0, 221, 228);
+    text-shadow: 0px 0px 5px #ffffff;
 }
 
 p {
@@ -33,7 +42,7 @@ p {
     text-align: center;
     font-size: 2.2rem;
     color: white;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 1px 2px 1px black;
 }
 
 .box-input {
@@ -46,15 +55,24 @@ p {
 label {
     font-family: Space;
     text-transform: uppercase;
-    color: #e182f5;
-    text-shadow: 1px 1px 1px black;
+    color: rgb(225, 130, 245);
+    text-shadow: 1px 2px 1px black;
     font-size: 1.8rem;
 }
 
 input {
     width: 40px;
+    padding: 5px;
     margin-right: 20px;
     text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    background: rgba(88, 0, 100, 0.788);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px white;
+    cursor: pointer;
 }
 
 #ano {
@@ -68,13 +86,13 @@ input {
 }
 
 #box-saida {
-    padding: 0 calc((100% - 650px) / 2);
+    padding: 0 calc((100% - 900px) / 2);
     text-align: center;
 }
 
 #resultado {
-    display: inline-block;
-    background: #580064c9;
+    display: none;
+    background: rgba(88, 0, 100, 0.788);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px white;
@@ -86,10 +104,11 @@ button {
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
-    background: #58006480;
-    color: #d292c4;
-    text-shadow: 2px 2px 2px black;
+    background: rgba(88, 0, 100, 0.502);
+    color: rgb(225, 130, 245);
+    text-shadow: 1px 2px 1px black;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 button:active {
@@ -97,6 +116,40 @@ button:active {
 }
 
 span {
-    font-weight: bold;
-    font-size: 1.2em;
+    color: rgb(0, 221, 228);
+}
+
+.box-imagens {
+    display: flex;
+    padding: 0 calc((100% - 1200px) / 2);
+    height: 80vh;
+}
+
+.imagens {
+    list-style-type: none;
+    width: 100%;
+    transform: scale(0);
+    transition: all .7s ease-in-out;
+}
+
+@media (max-width: 500px) {
+    .box-input {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item-input {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        width: 150px;
+    }
+    label {
+        margin: 10px;
+        font-size: 2rem;
+    }
+    input {
+        width: 60px;
+        margin-right: 0;
+        font-size: 2rem;
+    }
 }
